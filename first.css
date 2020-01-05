@@ -1,0 +1,23 @@
+p{
+		color:green;
+}
+
+h1{
+		color:pink;
+}
+
+span{
+		color:black;
+}
+
+*{
+		color:green;
+}
+
+.h-tag{
+		color:red;
+}
+
+#h1{
+		color:gray;
+}

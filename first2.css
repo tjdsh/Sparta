@@ -1,0 +1,22 @@
+.nemo-red{
+	background-image: url("http://www.forest.go.kr/newkfsweb/cmm/fms/FileDown.do?atchFileId=FILE_000000010008639&fileSn=0")
+}
+
+.nemo-green{
+	background-color: green;
+	margin-bottom:30px;
+}
+
+.nemo-gray{
+	background-color: gray;
+	padding-top: 20px
+}
+
+.nemo-orange{
+	background-color: orange;
+}
+
+.nemo2{
+	width: 50px;
+	height: 50px;
+}
