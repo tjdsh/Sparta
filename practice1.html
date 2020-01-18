@@ -2,6 +2,47 @@
 <html>
 <head>
 	<title>연습!</title>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		
+
+
+
+		$(document).ready(function(){
+			console.log('로딩 끝났어!');
+			$('#abcde').click(function(){
+
+				console.log($('.memo').css('display'));
+
+				$('.memo').toggle();
+				
+				if($('.memo').css('display') == 'none'){
+					$('#tolle-button').text('포스팅박스 열기');
+				}else{
+					$('#toggle-button').text('포스팅박스 닫기');
+				}
+
+				$('#button1').click(function(){
+				})
+
+			});
+
+		});
+
+		$.ajax({
+			type: "POST",
+			url: "http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/RealtimeCityAir/1/99",
+			data: {},
+			success: function(response){
+				console.log(response)
+			},
+			error: function(response){
+				console.log(response);
+			}
+		})
+
+	</script>
 	<link rel = "stylesheet" type = "text/css" href = "./practice1.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -12,53 +53,53 @@
 <body>
 	<div class="container">
 		<div class="jumbotron">
-		  <h1 class="display-4">나홀로 링크 메모장!</h1>
- 		<p class="lead">중요한 링크를 저장해두고, 나중에 볼 수 있는 공간입니다.</p>
-		  <hr class="my-4">
- 	  	<a class="btn btn-primary btn-lg" href="#" role="button">포스팅박스 열기</a>
- 		</p>
-		</div>
-
-		<div class="memo">
-			<p>아티클 URL</p><input type="text" name="text1"/>
-			<p>간단 코멘트</p><input type="text" name="text1"/>
-			<br/>
-			<br/>
-			<a class="btn btn-primary btn-lg" href="#" role="button">기사 저장</a>
+			<h1 class="display-4">나홀로 링크 메모장!</h1>
+			<p class="lead">중요한 링크를 저장해두고, 나중에 볼 수 있는 공간입니다.</p>
+			<hr class="my-4">
+			<a id="abcde" class="btn btn-primary btn-lg" href="#" role="button">포스팅박스 열기</a>
+		</p>
 	</div>
 
+	<div class="memo">
+		<p>아티클 URL</p><input type="text" name="text1"/>
+		<input id="input1">
+		<p>간단 코멘트</p><input type="text" name="text1"/>
+		<br/>
+		<br/>
+		<button id="button1" type="button" onClick="button_click();" a class="btn btn-primary btn-lg" href="#" role="button">기사 저장	</div>
 
 
-		<div class="cards">
-			<div class="card" style="width: 18rem;">
-			<img class="card-img-top" src="https://dictionary.cambridge.org/ko/images/thumb/forest_noun_002_14696.jpg?version=5.0.65" alt="Card image cap">
- 			<div class="card-body">
- 		   	<h5 class="card-title">여기 기사 제목이 들어가죠</h5>
- 		   	<p class="card-text">기사의 요약 내용이 들어갑니다! 가나다라마바사</p>
- 		   	<br/>
-		   	<p class="card-text"; style="color:blue"><b>여기에 코멘트가 들어갑니다</b></p>
-		  	</div>
+
+			<div class="cards">
+				<div class="card" style="width: 18rem;">
+					<img class="card-img-top" src="https://dictionary.cambridge.org/ko/images/thumb/forest_noun_002_14696.jpg?version=5.0.65" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">여기 기사 제목이 들어가죠</h5>
+						<p class="card-text">기사의 요약 내용이 들어갑니다! 가나다라마바사</p>
+						<br/>
+						<p class="card-text"; style="color:blue"><b>여기에 코멘트가 들어갑니다</b></p>
+					</div>
+				</div>
+				<div class="card" style="width: 18rem;">
+					<img class="card-img-top" src="https://dictionary.cambridge.org/ko/images/thumb/forest_noun_002_14696.jpg?version=5.0.65" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">여기 기사 제목이 들어가죠</h5>
+						<p class="card-text">기사의 요약 내용이 들어갑니다! 가나다라마바사</p>
+						<br/>
+						<p class="card-text"; style="color:blue"><b>여기에 코멘트가 들어갑니다</b></p>
+					</div>
+				</div>
+				<div class="card" style="width: 18rem;">
+					<img class="card-img-top" src="https://dictionary.cambridge.org/ko/images/thumb/forest_noun_002_14696.jpg?version=5.0.65" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">여기 기사 제목이 들어가죠</h5>
+						<p class="card-text">기사의 요약 내용이 들어갑니다! 가나다라마바사</p>
+						<br/>
+						<p class="card-text"; style="color:blue"><b>여기에 코멘트가 들어갑니다</b></p>
+					</div>
+				</div>
+
+
 			</div>
-			<div class="card" style="width: 18rem;">
-			<img class="card-img-top" src="https://dictionary.cambridge.org/ko/images/thumb/forest_noun_002_14696.jpg?version=5.0.65" alt="Card image cap">
- 			<div class="card-body">
- 		   	<h5 class="card-title">여기 기사 제목이 들어가죠</h5>
- 		   	<p class="card-text">기사의 요약 내용이 들어갑니다! 가나다라마바사</p>
- 		   	<br/>
-		   	<p class="card-text"; style="color:blue"><b>여기에 코멘트가 들어갑니다</b></p>
-		  	</div>
-			</div>
-			<div class="card" style="width: 18rem;">
-			<img class="card-img-top" src="https://dictionary.cambridge.org/ko/images/thumb/forest_noun_002_14696.jpg?version=5.0.65" alt="Card image cap">
- 			<div class="card-body">
- 		   	<h5 class="card-title">여기 기사 제목이 들어가죠</h5>
- 		   	<p class="card-text">기사의 요약 내용이 들어갑니다! 가나다라마바사</p>
- 		   	<br/>
-		   	<p class="card-text"; style="color:blue"><b>여기에 코멘트가 들어갑니다</b></p>
-		  	</div>
-			</div>
-
-
-		</div>
-</body>
-</html>
+		</body>
+		</html>
